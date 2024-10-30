@@ -164,12 +164,11 @@ cst_val *lts_apply(const char *word,const char *feats,const cst_lts_rules *r)
 	phone = apply_model(fval_buff,
 			    r->letter_index[index],
 			    r->models);
-#if 0
         /* But these are in reverse order */
-        printf("letter-phone(s) alignment: %c %s\n",
+        printf("%c %s\n",
                full_buff[pos],
                (const char *)r->phone_table[phone]);
-#endif
+
 	/* delete epsilons and split dual-phones */
 	if (cst_streq("epsilon",r->phone_table[phone]))
 	    continue;
